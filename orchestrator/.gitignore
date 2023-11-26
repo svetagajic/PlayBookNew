@@ -1,0 +1,88 @@
+# .NET and Visual Studio
+bin/
+obj/
+Debug/
+Release/
+publish/
+*.user
+*.suo
+*.userosscache
+*.suo
+*.userosscache
+*.suo
+*.suo.lock
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.suo
+*.userosscache
+*.suo
+*.suo.lock
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Visual Studio files
+*.sln.iml
+*.suo
+*.user
+*.userosscache
+*.suo
+*.userosscache
+*.suo
+*.suo.lock
+
+# Logs and caches
+logs/
+*.log
+*.log.*
+*.swp
+*~
+
+# macOS-specific files
+.DS_Store
+
+# Compiled files
+*.dll
+*.exe
+*.pdb
+*.dll.mdb
+*.exe.mdb
+
+# Package files
+*.nupkg
+*.pupkg
+*.snupkg
+
+# Rider
+.idea/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.suo
+*.userosscache
+*.suo
+*.suo.lock
+
+# Mono Auto Generated Files
+mono_crash.*
