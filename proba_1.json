@@ -1,0 +1,37 @@
+{
+  "playbook": {
+    "name": "Another Sample Playbook",
+    "jobs": [
+      {
+        "job_id": 1,
+        "name": "Start Task",
+        "weight": 3,
+        "dependent_on": []
+      },
+      {
+        "job_id": 2,
+        "name": "Main Task",
+        "weight": 7,
+        "dependent_on": [1]
+      },
+      {
+        "job_id": 3,
+        "name": "Subtask A",
+        "weight": 5,
+        "dependent_on": [2]
+      },
+      {
+        "job_id": 4,
+        "name": "Subtask B",
+        "weight": 6,
+        "dependent_on": [2]
+      },
+      {
+        "job_id": 5,
+        "name": "Final Task",
+        "weight": 8,
+        "dependent_on": [3, 4]
+      }
+    ]
+  }
+}

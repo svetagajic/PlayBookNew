@@ -8,13 +8,18 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    depends: {
+    dependent_on: {
       type: DataTypes.JSON,
       allowNull: true,
     },
     job_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    state: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'created', // Default value is 'created'
     }
   });
 

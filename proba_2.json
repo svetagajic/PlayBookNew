@@ -1,0 +1,43 @@
+{
+  "playbook": {
+    "name": "Playbook tipa 2",
+    "jobs": [
+      {
+        "job_id": 1,
+        "name": "Task 1",
+        "weight": 5,
+        "dependent_on": []
+      },
+      {
+        "job_id": 2,
+        "name": "Task 2",
+        "weight": 8,
+        "dependent_on": [1]
+      },
+      {
+        "job_id": 3,
+        "name": "Task 3",
+        "weight": 6,
+        "dependent_on": [2]
+      },
+      {
+        "job_id": 4,
+        "name": "Task 4",
+        "weight": 7,
+        "dependent_on": [1]
+      },
+      {
+        "job_id": 5,
+        "name": "Task 5",
+        "weight": 9,
+        "dependent_on": [2, 3]
+      },
+      {
+        "job_id": 6,
+        "name": "Task 6",
+        "weight": 5,
+        "dependent_on": [4, 5]
+      }
+    ]
+  }
+}

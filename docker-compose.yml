@@ -17,13 +17,9 @@ services:
     build:
       context: ./orchestrator
       dockerfile: Dockerfile.dev
-  backend:
-    restart: always
-    build:
-      context: ./backend
-      dockerfile: Dockerfile.dev   
     depends_on:
       - postgres
+    restart: on-failure 
   frontend:
     build:
       context: ./frontend
