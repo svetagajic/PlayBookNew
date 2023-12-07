@@ -4,9 +4,9 @@ import Axios from 'axios';
 
 const fetchPlaybooksFromBackend = async () => {
   try {
-    const response = await Axios.get('http://localhost:3001/api/playbooks');
+    const response = await Axios.get('orchestrator/playbook/');
 
-    console.log(response);
+    console.log(response.data);
 
     return response.data; // Assuming the response contains an array of playbooks
   } catch (error) {
@@ -23,31 +23,38 @@ function PlaybookList() {
       setPlaybooks(data);
     });
   }, []); // The empty dependency array ensures this effect runs once on component mount
-
-
+  
   return (
     <div className="container mt-4">
       <h1 className="mb-4">Playbooks List</h1>
-      {playbooks.map((playbook, index) => (
-        <div className="card mb-4" key={index}>
-          <div className="card-body">
-            <h2 className="card-title">{playbook.name}</h2>
-            <ul className="list-group">
-              {playbook.tasks.map((task) => (
-                <li className="list-group-item" key={task.id}>
-                  <strong>{task.name}</strong> - {task.module}
-                  <br />
-                  Command: {task.command}
-                  <br />
-                  Dependent On: {task.dependent_on.join(', ')}
-                </li>
-              ))}
-            </ul>
+      {playbooks && playbooks.map((playbook, index) => {
+        console.log(playbook);  // Add this line to log the playbook
+        return (
+          <div className="card mb-4" key={index}>
+            <div className="card-body">
+              <h2 className="card-title">{playbook.Name}</h2>
+              <ul className="list-group">
+                {playbook.Jobs && playbook.Jobs.map((job) => {
+                  console.log(job);  // Add this line to log each task
+                  return (
+                    <li className="list-group-item" key={job.id}>
+                      <strong>{job.Name}</strong> - {job.module}
+                      <br />
+                      Job weight: {job.Weight}
+                      <br />
+                      Dependent On: {job.DependentOn}
+                      <br />
+                      State: {job.State}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
-  );
+  );  
 }
 
 export default PlaybookList;

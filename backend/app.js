@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 // Routes
-app.use('/api/playbooks', playbooksRouter);
+app.use('/playbooks', playbooksRouter);
 
 // Sync the Sequelize models with the database and start the server
 sequelize.sync().then(() => {

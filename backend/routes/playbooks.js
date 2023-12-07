@@ -10,7 +10,7 @@ const router = express.Router();
 router.post('/', async (req, res) => {
   try {
     // Parse YAML content from the request body
-    console.log(req.body)
+    console.log(req)
 
     const { name, jobs } = req.body.playbook;
 
@@ -40,6 +40,8 @@ router.post('/', async (req, res) => {
 // Route to get all playbooks with associated jobs
 router.get('/', async (req, res) => {
   try { 
+    console.log("stigao");
+    
     const playbooks = await Playbook.findAll({ include: Job });
 
     res.status(200).json(playbooks);
